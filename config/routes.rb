@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
   resources :restaurants do
     collection do
       get :top
@@ -6,5 +7,6 @@ Rails.application.routes.draw do
     member do
       get :chef
     end
+    resources :reviews, only: [:new]
   end
 end
